@@ -1,0 +1,28 @@
+/* class*/
+.main-logo {
+    width: 400px;    
+}
+
+/*id*/
+#nav-bar {
+    /* display: inline-block; */
+    width:850px;
+    height:30px;
+}
+#nav-bar ul li {
+    list-style : none; 
+    float : left;
+    line-height:30px;
+    text-align:center; 
+}
+#nav-bar .menuLink{
+    text-decoration:none;
+    display:block;
+    width:150px;
+    font-size:12px;
+    font:Arial;
+    font-weight:bold;
+}
+#nav-bar .menuLink:hover {
+    color : blue;
+}
