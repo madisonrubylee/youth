@@ -1,15 +1,20 @@
 <template>
     <div>
-        gg
+       <HeaderComponent></HeaderComponent>
+       <footerComponent></footerComponent>
     </div>
 </template>
 
 <script>
 import HeaderComponent from './HeaderComponent.vue'
-import footer from './Footer.vue'
+import footerComponent from './Footer.vue'
 
 export default {
-  extends: HeaderComponent, footer
+//  extends: HeaderComponent, footer
+  components: {
+    HeaderComponent: HeaderComponent,
+    footerComponent: footerComponent
+  }
 }
 </script>
 

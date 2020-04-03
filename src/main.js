@@ -4,8 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import BootstrapVue from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-vue/dist//bootstrap-vue.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
+// import 'expose-loader?$!expose-loader?jQuery!jquery'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(BootstrapVue)
 Vue.config.productionTip = true
@@ -15,5 +18,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  render: h => h(App)
 })
