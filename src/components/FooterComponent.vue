@@ -3,15 +3,14 @@
       <b-card-text>
         With supporting text below as a natural lead-in to additional content.<br>
         문의 : telepopmujik@gmail.com
-      </b-card-text>
-      
-  <b-button href="#" variant="primary">Go somewhere</b-button>
-</b-card>
+      </b-card-text>  
+     <b-button href="#" variant="primary">Go somewhere</b-button>
+    </b-card>
 </template>
 
 <script>
 export default {
-  name: 'footerComponent'
+  name: 'FooterComponent'
 }
 </script>
 

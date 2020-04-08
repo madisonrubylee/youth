@@ -19,5 +19,5 @@ export default {
 </script>
 
 <style lang="css">
-  @import "../style.css";
-</style>
+   /*@import "~bulma/css/bulma.css";*/
+ </style>
