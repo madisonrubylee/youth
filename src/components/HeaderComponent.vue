@@ -29,14 +29,16 @@
     </ul>
     </nav>  -->
 
-
-       <div class="navDivClass">
+    <div class="navDivClass">
     <b-navbar variant="faded" type="light" class="mainNav">
         <b-navbar-brand href="#"><img src="../../images/logo.gif" class="logoImg"></b-navbar-brand>
-
         <b-navbar-nav class="menuNav">
-            <b-nav-item-dropdown text="리뷰" right>
-            <b-dropdown-item><router-link to='/lifeHack'>생활팁</router-link></b-dropdown-item>
+            <b-nav-item-dropdown text="리뷰" right >
+            <b-dropdown-item class="has-link">
+                <router-link to="/lifeHack">
+                생활팁
+                </router-link>
+            </b-dropdown-item>
             <b-dropdown-item href="#">후기</b-dropdown-item>
             </b-nav-item-dropdown>
 
@@ -193,4 +195,5 @@ export default {
 .personIcon {
     margin-left: -31px;
 }
+
 </style>

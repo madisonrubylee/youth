@@ -1,3 +1,22 @@
+/* 공통 css*/
+
+ul {
+  list-style: none;
+}
+
+ul.tabs {
+  display: flex;
+}
+
+.list li {
+  box-sizing: border-box;
+  display: block;
+  padding: 15px;
+  border-bottom: 1px solid #ccc; 
+  position: relative;
+}
+
+
 /* class*/
 .main-logo {
     width: 400px;    
