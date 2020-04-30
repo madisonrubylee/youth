@@ -3,7 +3,9 @@
        <HeaderComponent></HeaderComponent>
        <section class="lifeHackInfo"></section>
         <section class="lifeHackSection">
-          <b-button v-b-toggle.sidebar-1 class="selectOptionBtn">지역 선택</b-button>
+          <div class="list">
+            <b-button v-b-toggle.sidebar-1 class="selectOptionBtn" variant="info">지역 선택</b-button>
+          </div>
             <b-sidebar id="sidebar-1" title="지역" bg-variant="white"  shadow>
               <template v-slot:default="{ hide }">
                <div class="px-3 py-2">
@@ -11,21 +13,29 @@
                 {{haveToSelect}}를 선택해주세요 ! 
                 </p>
               <b-img src="../../assets/map.jpg" fluid thumbnail></b-img>
-                  <b-form-select v-model="selectedRegion" :options="regionOptions" class="selectOption" @change="regionChange()"></b-form-select>
+                  <b-form-select v-model="selectedRegion"  :options="regionOptions" class="selectOption" @change="regionChange()"></b-form-select>
                   <b-form-select v-model="selectedCountry" :options="countryOptions" class="selectOption" ></b-form-select>
-              <b-button class="selectCountryBtn" variant="primary" block @click="hide">닫기</b-button>
+              <b-button class="selectCountryBtn" variant="info" block @click="hide" v-on:click="searchList"  v-bind:value="query">검색</b-button>
+              <b-button class="selectCountryBtn" variant="secondary" block @click="hide">닫기</b-button>
               </div>
               </template>
              </b-sidebar>
+             <div class="list">
+              <!-- 20.04.27 submitted 아니면 전체 정보를 보여주는 식으로 ? -->
+              <div v-if="submitted">
+                  <!-- <lifeHack-result v-bind:data="lifeHackSearchList" v-bind:query="query"></lifeHack-result> -->
+                    <list v-bind:data="lifeHackSearchList" ></list>
+              </div>
+              <div v-else>
+                <p class="noResult">
+                    아직 리뷰가 없습니다.
+                </p>               
+              <!-- <tabs v-bind:tabs="tabs" v-bind:selected-tab="selectedTab" v-on:@change="onClickTab"></tabs> -->
+              </div>
+            </div>
           </section>
           <!-- <div v-if="data.length"> -->
-             <div v-if="submitted">
-                <search-result v-bind:data="searchResult" v-bind:query="query"></search-result>
-             </div>
-             <div v-else>
-               해당 지역에는 리뷰가 없습니다. 찾을 수 없습니다. 
-            <!-- <tabs v-bind:tabs="tabs" v-bind:selected-tab="selectedTab" v-on:@change="onClickTab"></tabs> -->
-          </div>
+             
           <!-- <div v-else> -->
           <div>
           <!-- {{query}} 검색어로 찾을수 없습니다  -->
@@ -37,14 +47,20 @@
 <script>
 import HeaderComponent from '../../components/HeaderComponent.vue'
 import footerComponent from '../../components/FooterComponent.vue'
+import resultComponent from '../../components/resultComponent.vue'
+import ratingComponent from '../../components/ratingComponent.vue'
+import contentBoxComponent from '../../components/ContentBoxComponent.vue'
 
 import lifeHackModel from '../../models/lifeHackModel.js'
 
 export default {
   name: 'lifeHack',
   components: {
-    HeaderComponent: HeaderComponent,
-    footerComponent: footerComponent
+    'HeaderComponent': HeaderComponent,
+    'footerComponent': footerComponent,
+    'list': resultComponent,
+    'ratingComponent': ratingComponent,
+    'contentBox': contentBoxComponent
   },
   data () {
     return {
@@ -111,11 +127,9 @@ export default {
     }
   },
   methods: {
-    search () {
-      lifeHackModel.list().then(data => {
-        this.submitted = true
-        this.lifeHackSearchList = data
-      })
+    searchList () {
+      // this.query = query
+      this.search()
       // 추후에 개발 예정
       // HistoryModel.add(this.query)
       // this.fetchHistory()
@@ -124,8 +138,20 @@ export default {
       this.haveToSelect = '국가'
       this.countryOptions = this.types[this.selectedRegion]
       this.selectedCountry = 'default'
+    },
+    openSideBar () {
+      this.haveToSelect = '지역'
+    },
+    search () {
+      lifeHackModel.list().then(data => {
+        this.submitted = true
+        this.lifeHackSearchList = data
+        console.log(data)
+      })
     }
+
   }
+  
   // computed: {
   //   country: function (e) {
   //     return this.types[this.options]
@@ -136,13 +162,15 @@ export default {
 
 <style lang="css">
 .selectOptionBtn{
-  margin-left : 430px;
+  /* margin-left : 430px; */
+  margin-bottom : 30px;
 }
 .lifeHackInfo{
   height:150px;
 }
 .lifeHackSection{
-    height : 800px;
+    /* height : 800px; */
+    margin: 1px auto 200px;
 }
 .selectOption{
   margin-top:10px;

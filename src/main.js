@@ -4,12 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import {BootstrapVue, BootstrapVueIcons} from 'bootstrap-vue'
-//import Buefy from 'buefy'
+// import Buefy from 'buefy'
 // import 'buefy/dist/buefy.css'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 import '../node_modules/bootstrap-vue/dist/bootstrap-vue-icons.min.css'
+import '../style.css'
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)

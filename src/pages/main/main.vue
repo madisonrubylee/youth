@@ -58,6 +58,7 @@ export default {
       width: 500px;
       height:50px;
       margin-left:650px;
+      margin-top:50px;
     }
     .searchBG{
       background-color:#fff200;

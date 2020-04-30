@@ -18,6 +18,9 @@ export default {
 }
 </script>
 
+<style scoped src = "../style.css"></style> 
+<!-- This will import the css scoped to this componen only-->
 <style lang="css">
    /*@import "~bulma/css/bulma.css";*/
+   /* @import "~style.css"  this wii import the css globaally */
  </style>
