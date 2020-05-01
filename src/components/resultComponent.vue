@@ -5,8 +5,9 @@
     </div>
     <ul>
       <li v-for="(item,idx) in data" v-bind:key="idx" >
+        <a><img v-if="item.image" v-bind:src="item.image" /></a>
         <p>{{item.rating}}</p>
-        <img v-if="item.image" v-bind:src="item.image" >
+        <!-- <img v-if="item.image" v-bind:src="item.image" /> -->
          {{item.name}}
          <p> {{item.title}} </p>
         <p>{{item.content}}</p>
