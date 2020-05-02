@@ -5,7 +5,8 @@
        <div class="mainBody">
          <b-card overlay img-src="../../../images/bodyImage.jpg" class="bodyImage">
           <b-card-text class="bodyText">
-          교환학생, 유학생 커뮤니티 Y O U T H 🏃‍♀🏃‍♂🌎
+          <!-- 교환학생, 유학생 커뮤니티 Y O U T H 🏃‍♀🏃‍♂🌎 -->
+          100 % 실제 여행 커뮤니티 U A R T H 🏃‍♀🏃‍♂🌎
           </b-card-text>
           <b-form-input size="sm" class="mr-sm-2 searchForm" placeholder="궁금한 정보를 검색해보세요"></b-form-input>
           <b-button size="sm" class="my-2 my-sm-0 searchBG" type="submit" ><b-icon icon="search" class="searchIcon"></b-icon></b-button>

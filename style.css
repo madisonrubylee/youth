@@ -59,10 +59,17 @@ header {
   padding: 15px 0  15px 0;
   text-align: center;
 }
+
+html {
+  height: 100%;
+}
 body {
+  margin: 0;
+  height: 100%;
   line-height : 25px;
   background-color: #fafafa;
 }
+
 /* input[type=text] {
   display: block;
   box-sizing: border-box;
@@ -124,6 +131,7 @@ ul.tabs {
   padding: 15px;
   border-bottom: 1px solid #ccc; 
   position: relative;
+  height : 418px;
 }
 .list li:last-child {
   border-bottom: none;
@@ -147,9 +155,16 @@ ul.tabs {
 }
 
 .list li img {
-  width: 20%;
+  width: 200px;
+  height : 160px;
   margin: 5px 0 6px 30px;
+  float:right;
 }
+
+.imgInModal {
+  width: 465px;
+}
+
 form {
   position: relative;
 }
@@ -178,4 +193,8 @@ form {
 #search-result img {
   width: 30%;
   height: 30%;
+}
+
+section {
+  position : relative;
 }

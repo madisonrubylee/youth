@@ -1,8 +1,8 @@
 <template>
     <div>
        <HeaderComponent></HeaderComponent>
-       <section class="lifeHackInfo"></section>
-        <section class="lifeHackSection">
+       <div class="lifeHackInfo"></div>
+        <div class="lifeHackSection">
           <div class="list">
             <b-button v-b-toggle.sidebar-1 class="selectOptionBtn" variant="info">지역 선택</b-button>
           </div>
@@ -33,7 +33,7 @@
               <!-- <tabs v-bind:tabs="tabs" v-bind:selected-tab="selectedTab" v-on:@change="onClickTab"></tabs> -->
               </div>
             </div>
-          </section>
+          </div>
           <!-- <div v-if="data.length"> -->
              
           <!-- <div v-else> -->
@@ -146,12 +146,14 @@ export default {
       lifeHackModel.list().then(data => {
         this.submitted = true
         this.lifeHackSearchList = data
-        console.log(data)
+        console.log('data', data)
       })
+
+      console.log('selectedRegion', this.selectedRegion)
+      console.log('selectedCountry', this.selectedCountry)
     }
 
   }
-  
   // computed: {
   //   country: function (e) {
   //     return this.types[this.options]
@@ -169,8 +171,11 @@ export default {
   height:150px;
 }
 .lifeHackSection{
-    /* height : 800px; */
-    margin: 1px auto 200px;
+    height : auto; 
+    margin: 1px auto 100%;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 19px; /* footer height */
 }
 .selectOption{
   margin-top:10px;
