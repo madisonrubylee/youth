@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import main from '../pages/main/main.vue'
 import login from '../pages/login/login.vue'
 import lifeHack from '../pages/review/lifeHack.vue'
+import comunity from '../pages/comunity/comunity.vue'
 
 // 뷰 어플리케이션에 라우터 플러그인을 추가한다.
 Vue.use(Router)
@@ -16,7 +17,8 @@ const router = new Router({
     { path: '/', name: 'main', component: main},
     { path: '*', component: NotFound },
     { path: '/login', name: 'login', component: login },
-    { path: '/lifeHack', name: 'lifeHack', component: lifeHack}
+    { path: '/lifeHack', name: 'lifeHack', component: lifeHack},
+    { path: '/comunity', name: 'comunity', component: comunity}
   ]
 })
 

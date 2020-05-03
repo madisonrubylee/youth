@@ -36,14 +36,17 @@
             <b-nav-item-dropdown text="리뷰" right >
             <b-dropdown-item class="has-link">
                 <router-link to="/lifeHack">
-                생활팁
+                    생활팁
                 </router-link>
             </b-dropdown-item>
             <b-dropdown-item href="#">후기</b-dropdown-item>
             </b-nav-item-dropdown>
 
             <b-nav-item-dropdown text="커뮤니티" right class="secondMenu">
-            <b-dropdown-item href="#">북미</b-dropdown-item>
+            <b-dropdown-item href="#"></b-dropdown-item>
+                <router-link to="/comunity">
+                    북미
+                 </router-link>
             <b-dropdown-item href="#">유럽</b-dropdown-item>
             <b-dropdown-item href="#">아시아</b-dropdown-item>
             <b-dropdown-item href="#">기타지역</b-dropdown-item>
